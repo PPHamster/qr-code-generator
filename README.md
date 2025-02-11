@@ -1,6 +1,6 @@
 # QR Code Generator
 
-![QR Code Generator](https://raw.githubusercontent.com/pphamster/qr-code-generator/main/assets/images/qr-preview.png)
+![QR Code Generator](https://raw.githubusercontent.com/pphamster/qr-code-generator/main/assets/images/web-preview.png)
 
 ## 📌 Introduction
 Welcome to **QR Code Generator**, a simple and fast web application that allows you to generate and download QR codes instantly. Built using **React (Vite)** and deployed on **GitHub Pages**, this tool makes it easy to create QR codes for URLs, text, and more.
@@ -53,7 +53,7 @@ This will build the project and push the `dist/` folder to the `gh-pages` branch
 ## 📸 Screenshots
 | QR Code Generator | Responsive UI |
 |------------------|--------------|
-| ![QR Code Example](https://raw.githubusercontent.com/pphamster/qr-code-generator/main/assets/images/example-qr.png) | ![Mobile View](https://raw.githubusercontent.com/pphamster/qr-code-generator/main/assets/images/mobile-view.png) |
+| ![QR Code Example](https://raw.githubusercontent.com/pphamster/qr-code-generator/main/assets/images/generate-qr-example.png) | ![Mobile View](https://raw.githubusercontent.com/pphamster/qr-code-generator/main/assets/images/mobile-preview.png) |
 
 ## 📄 License
 This project is open-source and available under the [MIT License](LICENSE).
