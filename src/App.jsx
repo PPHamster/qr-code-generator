@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import QRSizeSelector from "./QRSizeSelector";
+import QRFormatSelector from './QRFormatSelector';
 
 export default function App() {
-  const defaultFileName = "qrcode";
   const [text, setText] = useState("");
   const [qrValue, setQrValue] = useState("");
   const [size, setSize] = useState(200);
   const [fileName, setFileName] = useState("");
+  const [fileFormat, setFileFormat] = useState("png");
 
   const generateQRCode = () => {
     setQrValue(text);
@@ -15,10 +16,10 @@ export default function App() {
 
   const downloadQRCode = () => {
     const canvas = document.querySelector("canvas");
-    const pngUrl = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    const imageUrl = canvas.toDataURL(`image/${fileFormat}`).replace(`image/${fileFormat}`, "image/octet-stream");
     let downloadLink = document.createElement("a");
-    downloadLink.href = pngUrl;
-    downloadLink.download = `${fileName || defaultFileName}.png`;
+    downloadLink.href = imageUrl;
+    downloadLink.download = `${fileName || "qrcode"}.${fileFormat}`;
     document.body.appendChild(downloadLink);
     downloadLink.click();
     document.body.removeChild(downloadLink);
@@ -48,7 +49,6 @@ export default function App() {
 
       <br />
 
-      {/* Input for QR Code file name */}
       <input
         type="text"
         placeholder="Enter file name (optional)"
@@ -59,7 +59,11 @@ export default function App() {
 
       <br />
 
-      {/* QR Size Selection Component */}
+      <QRFormatSelector fileFormat={fileFormat} setFileFormat={setFileFormat} />
+
+      <br />
+      <br />
+
       <QRSizeSelector size={size} setSize={setSize} />
 
       <br />
